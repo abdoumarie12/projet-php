@@ -1,0 +1,56 @@
+Mon code PHP traduit en français
+Les données
+
+Liste des auteurs : j’ai 3 auteurs. Chacun a un nom complet, un email et un âge.
+
+Mickaël Andrieu, 34 ans
+Mathieu Nebra, 34 ans
+Laurène Castor, 28 ans
+
+Liste des recettes : j’ai 3 recettes. Chacune a un titre, un texte, un auteur (identifié par son email) et un état activé ou non.
+
+Cassoulet : activée
+Couscous : désactivée
+Escalope milanaise : activée
+Les fonctions
+
+Fonction displayAuthor (afficher l’auteur)
+Je reçois un email et la liste des auteurs. Pour chaque auteur de la liste :
+
+si son email est identique à celui reçu, je renvoie son nom complet, suivi de son âge entre parenthèses ;
+sinon, je passe au suivant.
+
+Si je n’ai trouvé personne, je renvoie « Auteur inconnu ».
+
+Fonction isValidRecipe (la recette est-elle valide ?)
+Je reçois une recette.
+
+Si elle contient l’information « is_enabled », je prends sa valeur (oui ou non).
+Sinon, je considère que c’est non.
+
+Je renvoie ce résultat.
+
+Fonction getRecipes (récupérer les recettes)
+Je reçois la liste de toutes les recettes.
+
+Je crée une liste vide, qui contiendra les recettes valides.
+Pour chaque recette, je demande à isValidRecipe si elle est valide. Si oui, je l’ajoute à ma liste.
+À la fin, je renvoie la liste des recettes valides.
+La page HTML
+
+Pour chaque recette valide (Cassoulet et Escalope milanaise, mais pas Couscous), j’affiche :
+
+le titre, en titre de niveau 3 (<h3>) ;
+le texte de la recette, dans un bloc (<div>) ;
+l’auteur, en italique (<i>), grâce à displayAuthor.
+Résultat à l’écran
+
+Cassoulet
+Etape 1 : des flageolets !
+Mickaël Andrieu (34 ans)
+
+Escalope milanaise
+Etape 1 : des flageolets !
+Mickaël Andrieu (34 ans)
+
+Rappel : pour que ça marche, dans getRecipes l’appel doit bien s’écrire isValidRecipe($recette) avec le « e » à la fin.
