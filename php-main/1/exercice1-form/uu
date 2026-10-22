@@ -1,0 +1,37 @@
+ <?php if ($age < 0) { ?>
+
+            <div class="alert alert-danger" role="alert">
+                votre ne corresponde pas
+            </div>
+            <p><a href="index.php" class="btn btn-secondary">Retourner au formulaire</a></p> 
+
+            <?php if ($a_soumit_le_formulaire && $champs_valides) { ?>
+
+                <h1>Message bien reçu ! </h1>
+                <section class="card" style="max-width: 320px">
+                    <img src="img/green-double-circle-check-mark_78370-1749.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title border-bottom pb-2">Rappel de vos informations</h4>
+                        <p class="card-text"><strong>Vous avez :</strong> <?php echo $age; ?> . ans</p>
+                    </div>
+                </section>
+
+
+            <?php } elseif ($a_soumit_le_formulaire && !$champs_valides) { ?>
+
+                <div class="alert alert-danger" role="alert">
+                    Il faut une année de naissance valide pour soumettre le formulaire.
+                </div>
+                <p><a href="index.php" class="btn btn-secondary">Retourner au formulaire</a></p>
+            <?php } else { ?>
+                <div class="alert alert-danger" role="alert">
+                    Désolé vous n'avez pas soumis le formulaire. Veillez cliquer sur ce lien pour soumettre à nouveau
+                </div>
+
+                <p><a href="index.php" class="btn btn-secondary">Retourner au formulaire</a></p>
+
+            <?php } ?>
+            <br />
+
+
+        <?php } ?>

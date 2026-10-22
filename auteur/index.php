@@ -30,7 +30,7 @@ $auteurs = [
                     'title' => 'Couscous',
                     'recipe' => 'Etape 1 : des flageolets !',
                     'author' => 'mickael.andrieu@exemple.com',
-                    'is_enabled' => false,
+                    'is_enabled' => true,
                 ],
 
                 [
@@ -53,7 +53,7 @@ $auteurs = [
             }
         function isValidRecipe(array $recette): bool
         {
-            if (array_key_exists('is_enabled', $recette)) {
+            if (array_key_exists('is_enabled', $recette) && is_bool($recette['is_enabled'])) {
                 $isEnabled = $recette['is_enabled'];
             } else {
                 $isEnabled = false;
